@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page de Login</title>
+  <title>Intranet - Amitron</title>
   <link rel="stylesheet" href="login.css">
 </head>
 <body>
@@ -29,6 +29,35 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Gestion de la soumission du formulaire de connexion
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.message === 'Connexion réussie') {
+          alert('Connexion réussie !');
+        } else {
+          alert('Nom d\'utilisateur ou mot de passe incorrect');
+        }
+      })
+      .catch(error => {
+        alert('Erreur du serveur');
+        console.error(error);
+      });
+    });
+  </script>
+
 </body>
 </html>
