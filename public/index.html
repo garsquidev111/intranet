@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page de Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Connexion</h2>
+      <form id="login-form">
+        <div class="textbox">
+          <input type="text" placeholder="Nom d'utilisateur" id="username" required>
+        </div>
+        <div class="textbox">
+          <input type="password" placeholder="Mot de passe" id="password" required>
+        </div>
+        <div class="forgot-password">
+          <a href="#">Mot de passe oublié ?</a>
+        </div>
+        <button type="submit" class="btn-login">Se connecter</button>
+      </form>
+      <div class="signup">
+        <p>Pas encore de compte ? <a href="#">Inscrivez-vous</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
